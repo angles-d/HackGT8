@@ -16,7 +16,7 @@ const projection = d3.geoMercator()
 
 Promise.all([
 d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
-d3.csv("plasticWaste.csv")
+d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
 ]).then(function (initialize) {
 
     let dataGeo = initialize[0]
