@@ -1,4 +1,4 @@
-Country,Latitude,Longitude,EconomicStatus,WasteGenerationRate,PlasticWasteStream,InadequatelyManagedWaste,LitteredWaste,WasteGeneration,PlasticWaste generation,InadequatelyManagedPlasticWaste ,PlasticWasteLittered,MismanagedPlasticWaste,MismanagedPlasticWaste2010,MismanagedPlasticWaste2025
+Country,Latitude,Longitude,EconomicStatus,WasteGenerationRate,PlasticWasteStream,InadequatelyManagedWaste,LitteredWaste,WasteGeneration,PlasticWasteGeneration,InadequatelyManagedPlasticWaste ,PlasticWasteLittered,MismanagedPlasticWaste,MismanagedPlasticWaste2010,MismanagedPlasticWaste2025
 Albania,41,20,LMI,1,9,45,2,1948510,174392,77897,3488,0,29705,63051
 Algeria,28,2,UMI,1,12,58,2,19867896,2374214,1378693,47484,0,520555,1017444
 Angola,-11,18,LMI,0,13,71,2,1819220,235589,166597,4712,0,62528,136770
