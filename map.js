@@ -1,5 +1,4 @@
 
-
 // The svg
 const svg = d3.select("svg"),
     width = +svg.attr("width"),
@@ -21,7 +20,7 @@ d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv
 
   // Create a color scale
   const color = d3.scaleOrdinal()
-    .domain(data.map(d => d.homecontinent))
+    .domain(data.map(d => d.Country))
     .range(d3.schemePaired);
 
   // Add a scale for bubble size
@@ -49,7 +48,7 @@ d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv
     .join("circle")
       .attr("cx", d => projection([+d.Longitude, +d.Latitude])[0])
       .attr("cy", d => projection([+d.Longitude, +d.Latitude])[1])
-      .attr("r", d => size(+(d.PlasticWasteLittered/1000)))
+      .attr("r", 10/*d => projection(1+[d.PlasticWasteGeneration])*/)
       .style("fill", d => color(d.Country))
       .attr("stroke", d => {if (d.n>2000) {return "black"} else {return "none"}  })
       .attr("stroke-width", 1)
@@ -73,10 +72,10 @@ d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv
   // --------------- //
 
   // Add legend: circles
-  const valuesToShow = [100,4000,15000]
+  /*const valuesToShow = [100,4000,15000]
   const xCircle = 40
-  const xLabel = 90
-  svg
+  const xLabel = 90*/
+  /*svg
     .selectAll("legend")
     .data(valuesToShow)
     .join("circle")
@@ -84,10 +83,10 @@ d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv
       .attr("cy", d => height - size(d))
       .attr("r", d => size(d))
       .style("fill", "none")
-      .attr("stroke", "black")
+      .attr("stroke", "black")*/
 
   // Add legend: segments
-  svg
+  /*svg
     .selectAll("legend")
     .data(valuesToShow)
     .join("line")
@@ -96,10 +95,10 @@ d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv
       .attr('y1', d => height - size(d))
       .attr('y2', d => height - size(d))
       .attr('stroke', 'black')
-      .style('stroke-dasharray', ('2,2'))
+      .style('stroke-dasharray', ('2,2'))*/
 
   // Add legend: labels
-  svg
+  /*svg
     .selectAll("legend")
     .data(valuesToShow)
     .join("text")
@@ -107,6 +106,7 @@ d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv
       .attr('y', d => height - size(d))
       .text(d => d)
       .style("font-size", 10)
-      .attr('alignment-baseline', 'middle')
+      .attr('alignment-baseline', 'middle')*/
 })
+
   
