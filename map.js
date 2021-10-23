@@ -40,6 +40,32 @@ d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv
         )
       .style("stroke", "none")
       .style("opacity", .2)
+      
+    // create a tooltip
+    const Tooltip = d3.select("#my_dataviz")
+      .append("div")
+      .attr("class", "tooltip")
+      .attr("id", "circle")
+      .style("opacity", 1)
+      .style("background-color", "white")
+      .style("border", "solid")
+      .style("border-width", "2px")
+      .style("border-radius", "5px")
+      .style("padding", "5px")
+
+    // Three function that change the tooltip when user hover / move / leave a cell
+    const mouseover = function(event, d) {
+      Tooltip.style("opacity", 1)
+    }
+    var mousemove = function(event, d) {
+      Tooltip
+        .html(d.Country + "<br>" + "long: " + d.Longitude + "<br>" + "lat: " + d.Latitude)
+        .style("left", (event.x)/2 + "px")
+        .style("top", (event.y)/2 - 30 + "px")
+    }
+    var mouseleave = function(event, d) {
+      Tooltip.style("opacity", 1)
+    }
 
   // Add circles:
   svg
@@ -48,11 +74,14 @@ d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv
     .join("circle")
       .attr("cx", d => projection([+d.Longitude, +d.Latitude])[0])
       .attr("cy", d => projection([+d.Longitude, +d.Latitude])[1])
-      .attr("r", d => d.PlasticWasteGeneration[0] * 2)
+      .attr("r", d => (d.PlasticWasteGeneration))
       .style("fill", d => color(d.Country))
       .attr("stroke", d => {if (d.n>2000) {return "black"} else {return "none"}  })
       .attr("stroke-width", 1)
       .attr("fill-opacity", .4)
+  .on("mouseover", mouseover)
+  .on("mousemove", mousemove)
+  .on("mouseleave", mouseleave)
 
 
   // Add title and explanation
