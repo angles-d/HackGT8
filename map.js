@@ -1,5 +1,5 @@
-var width = 750;
-var height = 250;
+var width = 1200;
+var height = 600;
 
 // The svg
 var svg = d3.select("#my_dataviz")
@@ -10,13 +10,13 @@ var svg = d3.select("#my_dataviz")
 
 // Map and projection
 const projection = d3.geoMercator()
-    .center([0,20])                // GPS of location to zoom on
-    .scale(99)                       // This is like the zoom
+    .center([0,15])                // GPS of location to zoom on
+    .scale(130)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
 Promise.all([
 d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
-d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
+d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
 ]).then(function (initialize) {
 
     let dataGeo = initialize[0]
@@ -64,7 +64,7 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
     }
     var mousemove = function(event, d) {
       Tooltip
-        .html(d.Country + "<br>" + "Plastic Waste Littered: " + d.PlasticWasteGeneration + "<br>" + "lat: " + d.Latitude)
+        .html(d.Country + "<br>" + "Plastic Waste Generated: " + new Intl.NumberFormat().format(d.PlasticWasteGeneration) + " kg/day<br>" + "latitude: " + d.Latitude)
         .style("left", (event.x)/2 + "px")
         .style("top", (event.y)/2 - 30 + "px")
         .style("border", "solid")
@@ -82,7 +82,7 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
     .join("circle")
       .attr("cx", d => projection([+d.Longitude, +d.Latitude])[0])
       .attr("cy", d => projection([+d.Longitude, +d.Latitude])[1])
-      .attr("r", d => (d.PlasticWasteLittered*0.00004))
+      .attr("r", d => (d.PlasticWasteGeneration*0.0000015))
       .style("fill", d => color(d.Country))
       .attr("stroke", d => {if (d.n>2000) {return "black"} else {return "none"}  })
       .attr("stroke-width", 1)
@@ -91,9 +91,8 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave)
 
-
   // Add title and explanation
-  svg
+  /*svg
     .append("text")
       .attr("text-anchor", "end")
       .style("fill", "black")
@@ -101,10 +100,7 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
       .attr("y", height - 30)
       .attr("width", 90)
       .html("")
-      .style("font-size", 14)
-
-
-  
+      .style("font-size", 14)*/
 })
 
   

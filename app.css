@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,7 +12,6 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-    background-attachment:fixed;
 }
 
 .mainText {
@@ -32,27 +32,48 @@
 
 
 nav {
-    margin: auto auto;
-    width: 100%;
-    font-size: 25px;
-    /*text-align: center;*/
+    display: flex;
+    align-items: center;
 }
 
 nav h2 {
     font-family: Abhaya Libre;
     font-style: normal;
     font-weight: bold;
+    font-size: 48px;
     color: #FFFFFF;
-    display: inline-block;
-    padding: 25px;
 }
 
-nav a {
+
+.header-container {
+    color: #B3CEE1 url ADD SEAGULL;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    height: calc(100vh - 72px);
+    display: flex;
+    align-items: left; 
+}
+ header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+ header h1 {
+    font-family: Cambo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 144px;
+    line-height: 78.5%; 
+    color: #B3CEE1;
+
+ }
+
+ header p {
     font-family: Adamina;
-	text-decoration: None;
-	color: #FFFFFF;
-    display: inline-block;
-    padding: 25px;
-}
-
-
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+ }               
