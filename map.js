@@ -16,7 +16,7 @@ const projection = d3.geoMercator()
 
 Promise.all([
 d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
-d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
+d3.csv("https://angles-d.github.io/HackGT8/plasticWaste1.csv")
 ]).then(function (initialize) {
 
     let dataGeo = initialize[0]
@@ -64,7 +64,7 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
     }
     var mousemove = function(event, d) {
       Tooltip
-        .html(d.Country + "<br>" + "Plastic Waste Littered: " + d.PlasticWasteGeneration + "<br>" + "lat: " + d.Latitude)
+        .html(d.Country + "<br>" + "Plastic Waste Generated: " + new Intl.NumberFormat().format(d.PlasticWasteGeneration) + " kg/day<br>" + "lat: " + d.Latitude)
         .style("left", (event.x)/2 + "px")
         .style("top", (event.y)/2 - 30 + "px")
         .style("border", "solid")
@@ -82,7 +82,7 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
     .join("circle")
       .attr("cx", d => projection([+d.Longitude, +d.Latitude])[0])
       .attr("cy", d => projection([+d.Longitude, +d.Latitude])[1])
-      .attr("r", d => (d.PlasticWasteLittered*0.00004))
+      .attr("r", d => (d.PlasticWasteGeneration*0.000002))
       .style("fill", d => color(d.Country))
       .attr("stroke", d => {if (d.n>2000) {return "black"} else {return "none"}  })
       .attr("stroke-width", 1)
@@ -92,16 +92,16 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
   .on("mouseleave", mouseleave)
 
 
-  // Add title and explanation
-  svg
-    .append("text")
-      .attr("text-anchor", "end")
-      .style("fill", "black")
-      .attr("x", width - 10)
-      .attr("y", height - 30)
-      .attr("width", 90)
-      .html("TEXT")
-      .style("font-size", 14)
+  // // Add title and explanation
+  // svg
+  //   .append("text")
+  //     .attr("text-anchor", "end")
+  //     .style("fill", "black")
+  //     .attr("x", width - 10)
+  //     .attr("y", height - 30)
+  //     .attr("width", 90)
+  //     .html("TEXT")
+  //     .style("font-size", 14)
 
 
   
