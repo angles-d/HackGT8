@@ -17,9 +17,9 @@ body {
 }
 
 nav {
-    display: flex
-    align-items: center
-    justify-content:
+    display: flex;
+    align-items: center;
+    justify-content;
 }
 
 nav .logo {
@@ -34,6 +34,31 @@ nav .logo {
     color: #B3CEE1 url ADD SEAGULL;
     background-repeat: no-repeat;
     background-position: right;
-    
-
+    background-size: contain;
+    height: calc(100vh - 72px)
+    display: flex;
+    align-items: left; 
 }
+ header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+ header h1 {
+    font-family: Cambo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 144px;
+    line-height: 78.5%; 
+    color: #B3CEE1;
+
+ }
+
+ header p {
+    font-family: Adamina;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+ }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
