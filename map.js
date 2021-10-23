@@ -13,16 +13,15 @@ const projection = d3.geoMercator()
 
 Promise.all([
 d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
-d3.csv("plasticWaste.csv")
+d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv")
 ]).then(function (initialize) {
 
     let dataGeo = initialize[0]
-    let data = initialize[2]
-    let dataLatLong = initialize[1]
+    let data = initialize[1]
 
   // Create a color scale
   const color = d3.scaleOrdinal()
-    .domain(data.map(d => d.Country))
+    .domain(data.map(d => d.homecontinent))
     .range(d3.schemePaired);
 
   // Add a scale for bubble size
