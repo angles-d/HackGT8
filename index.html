@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Plastic is Bad</title>
         <script src="https://d3js.org/d3.v6.js"></script>
         <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
         <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
         <svg id="my_dataviz" width="630" height="350"></svg>
         <script src = "map.js"></script>
+        
     </head>
     <body>
+        <style>
+            .circle:hover{
+              stroke: black;
+              stroke-width: 4px;
+            }
+          </style>
         <h1>Plastic Consumption Across the World</h1>
     </body>
 </html>
