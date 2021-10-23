@@ -48,7 +48,7 @@ d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv
     .join("circle")
       .attr("cx", d => projection([+d.Longitude, +d.Latitude])[0])
       .attr("cy", d => projection([+d.Longitude, +d.Latitude])[1])
-      .attr("r", 10/*d => projection(1+[d.PlasticWasteGeneration])*/)
+      .attr("r", d => d.PlasticWasteGeneration[0] * 2)
       .style("fill", d => color(d.Country))
       .attr("stroke", d => {if (d.n>2000) {return "black"} else {return "none"}  })
       .attr("stroke-width", 1)
@@ -63,7 +63,7 @@ d3.csv("https://raw.githubusercontent.com/angles-d/HackGT8/main/plasticWaste.csv
       .attr("x", width - 10)
       .attr("y", height - 30)
       .attr("width", 90)
-      .html("WHERE SURFERS LIVE")
+      .html("TEXT")
       .style("font-size", 14)
 
 
