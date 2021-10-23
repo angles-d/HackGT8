@@ -1,8 +1,12 @@
+var width = 630;
+var height = 350;
 
 // The svg
-const svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height)
+
 
 // Map and projection
 const projection = d3.geoMercator()
