@@ -5,14 +5,13 @@
 }
 
 .seagullImage {
-    background-image: url("https://raw.githubusercontent.com/angles-d/HackGT8/main/seagullBW.png");
-	min-height: 1065px;
-    min-width: 1440px;
-    background-attachment: fixed;
+    background-image: url("https://raw.githubusercontent.com/angles-d/HackGT8/main/chipseagull.jpg");
+    min-height: 720px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+    background-attachment: fixed;
 }
 
 .mainText {
