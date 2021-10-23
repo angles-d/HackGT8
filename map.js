@@ -1,5 +1,5 @@
-var width = 630;
-var height = 350;
+var width = 750;
+var height = 250;
 
 // The svg
 var svg = d3.select("#my_dataviz")
