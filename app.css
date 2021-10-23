@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 .seagullImage {
     background-image: url("https://raw.githubusercontent.com/angles-d/HackGT8/main/chipseagull.jpg");
     min-height: 1000px;
@@ -21,6 +22,9 @@
 	font-size: 30px;
 	transform: translate(-50%, -50%);
 	color: white;
+}
+.logo{
+    padding:30px
 }
 
 .mainH1 {
@@ -81,9 +85,72 @@
 
 
 nav {
+    position: absolute;
     display: flex;
     align-items: center;
+    top: 2%;
+    left: 2%;
 }
+
+nav a {
+    color: #f6f4e6;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    width: 75px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+    color: #0095ff;
+}
+
+nav .dot {
+    width: 6px;
+    height: 6px;
+    background: #0084e2;
+    border-radius: 50%;
+    opacity: 0;
+    -webkit-transform: translate(-310px, 15px);
+    transform: translate(-310px, 15px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+  
+nav a:nth-child(2):hover ~ .dot {
+-webkit-transform: translate(-270px, 15px);
+transform: translate(-270px, 15px);;
+-webkit-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+opacity: 1;
+}
+
+nav a:nth-child(3):hover ~ .dot {
+ -webkit-transform: translate(-205px, 15px);
+ transform: translate(-205px, 15px);
+-webkit-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+opacity: 1;
+}
+
+nav a:nth-child(4):hover ~ .dot {
+    -webkit-transform: translate(-130px, 15px);
+    transform: translate(-130px, 15px);
+-webkit-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+opacity: 1;
+}
+
+nav a:nth-child(5):hover ~ .dot {
+    -webkit-transform: translate(-20px, 15px);
+    transform: translate(-20px, 15px);
+-webkit-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+opacity: 1;
+}
+  
 
 nav h2 {
     font-family: Abhaya Libre;
