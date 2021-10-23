@@ -100,7 +100,7 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
       .attr("x", width - 10)
       .attr("y", height - 30)
       .attr("width", 90)
-      .html("TEXT")
+      .html("")
       .style("font-size", 14)
 
 
