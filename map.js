@@ -52,23 +52,27 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
       .attr("id", "circle")
       .style("opacity", 1)
       .style("background-color", "white")
-      .style("border", "solid")
-      .style("border-width", "2px")
+      .style("border", "none")
+      .style("border-width", "0px")
       .style("border-radius", "5px")
       .style("padding", "5px")
 
     // Three function that change the tooltip when user hover / move / leave a cell
     const mouseover = function(event, d) {
       Tooltip.style("opacity", 1)
+      .style("border-width", "2px")
     }
     var mousemove = function(event, d) {
       Tooltip
-        .html(d.Country + "<br>" + "long: " + d.Longitude + "<br>" + "lat: " + d.Latitude)
+        .html(d.Country + "<br>" + "Plastic Waste Littered: " + d.PlasticWasteGeneration + "<br>" + "lat: " + d.Latitude)
         .style("left", (event.x)/2 + "px")
         .style("top", (event.y)/2 - 30 + "px")
+        .style("border", "solid")
+        .style("border-width", "2px")
     }
     var mouseleave = function(event, d) {
-      Tooltip.style("opacity", 1)
+      Tooltip.style("opacity", 0)
+      .style("border", "none")
     }
 
   // Add circles:
@@ -78,7 +82,7 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
     .join("circle")
       .attr("cx", d => projection([+d.Longitude, +d.Latitude])[0])
       .attr("cy", d => projection([+d.Longitude, +d.Latitude])[1])
-      .attr("r", d => (d.PlasticWasteGeneration/200000))
+      .attr("r", d => (d.PlasticWasteLittered*0.00004))
       .style("fill", d => color(d.Country))
       .attr("stroke", d => {if (d.n>2000) {return "black"} else {return "none"}  })
       .attr("stroke-width", 1)
@@ -100,46 +104,7 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste.csv")
       .style("font-size", 14)
 
 
-  // --------------- //
-  // ADD LEGEND //
-  // --------------- //
-
-  // Add legend: circles
-  /*const valuesToShow = [100,4000,15000]
-  const xCircle = 40
-  const xLabel = 90*/
-  /*svg
-    .selectAll("legend")
-    .data(valuesToShow)
-    .join("circle")
-      .attr("cx", xCircle)
-      .attr("cy", d => height - size(d))
-      .attr("r", d => size(d))
-      .style("fill", "none")
-      .attr("stroke", "black")*/
-
-  // Add legend: segments
-  /*svg
-    .selectAll("legend")
-    .data(valuesToShow)
-    .join("line")
-      .attr('x1', d => xCircle + size(d))
-      .attr('x2', xLabel)
-      .attr('y1', d => height - size(d))
-      .attr('y2', d => height - size(d))
-      .attr('stroke', 'black')
-      .style('stroke-dasharray', ('2,2'))*/
-
-  // Add legend: labels
-  /*svg
-    .selectAll("legend")
-    .data(valuesToShow)
-    .join("text")
-      .attr('x', xLabel)
-      .attr('y', d => height - size(d))
-      .text(d => d)
-      .style("font-size", 10)
-      .attr('alignment-baseline', 'middle')*/
+  
 })
 
   

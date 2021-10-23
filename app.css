@@ -1,4 +1,39 @@
- .circle:hover{
-              stroke: black;
-              stroke-width: 4px;
-            }
+* {
+    box-sizing: border-box;
+    margin : 0;
+}
+
+body {
+    font-family: "Cambo", sans-serif;
+}
+
+.nav-container {
+    background: #FFFFFF;
+    height: 900px;
+}
+
+.wrapper {
+    max-width: width: 1440px;
+}
+
+nav {
+    display: flex
+    align-items: center
+    justify-content:
+}
+
+nav .logo {
+    font-family: Abhaya Libre;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    color: #FFFFFF;
+}
+
+.header-container {
+    color: #B3CEE1 url ADD SEAGULL;
+    background-repeat: no-repeat;
+    background-position: right;
+    
+
+}
