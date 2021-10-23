@@ -8,6 +8,7 @@
     background-image: url("https://raw.githubusercontent.com/angles-d/HackGT8/main/seagullBW.png");
 	min-height: 1065px;
     min-width: 1440px;
+    background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
