@@ -16,7 +16,7 @@ const projection = d3.geoMercator()
 
 Promise.all([
 d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
-d3.csv("https://angles-d.github.io/HackGT8/plasticWaste1.csv")
+d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
 ]).then(function (initialize) {
 
     let dataGeo = initialize[0]
@@ -82,7 +82,7 @@ d3.csv("https://angles-d.github.io/HackGT8/plasticWaste1.csv")
     .join("circle")
       .attr("cx", d => projection([+d.Longitude, +d.Latitude])[0])
       .attr("cy", d => projection([+d.Longitude, +d.Latitude])[1])
-      .attr("r", d => (d.PlasticWasteGeneration*0.000002))
+      .attr("r", d => (d.PlasticWasteGeneration*0.000001))
       .style("fill", d => color(d.Country))
       .attr("stroke", d => {if (d.n>2000) {return "black"} else {return "none"}  })
       .attr("stroke-width", 1)
