@@ -10,8 +10,8 @@ var svg = d3.select("#my_dataviz")
 
 // Map and projection
 const projection = d3.geoMercator()
-    .center([0,15])                // GPS of location to zoom on
-    .scale(130)                       // This is like the zoom
+    .center([0,0])                // GPS of location to zoom on
+    .scale(200)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
 Promise.all([
@@ -43,7 +43,7 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
             .projection(projection)
         )
       .style("stroke", "none")
-      .style("opacity", .2)
+      .style("opacity", .8)
       
     // create a tooltip
     const Tooltip = d3.select("#my_dataviz")
@@ -86,7 +86,7 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
       .style("fill", d => color(d.Country))
       .attr("stroke", d => {if (d.n>2000) {return "black"} else {return "none"}  })
       .attr("stroke-width", 1)
-      .attr("fill-opacity", .4)
+      .attr("fill-opacity", .8)
   .on("mouseover", mouseover)
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave)
