@@ -1,11 +1,17 @@
-var width = 995;
-var height = 825;
+var width = 1010;
+var height = 850;
+
+
+
 
 // The svg
 var svg = d3.select("#my_dataviz")
   .append("svg")
   .attr("width", width)
   .attr("height", height)
+
+
+
   
 // create a tooltip
 const tooltip = d3.select("#mapContainer")
@@ -24,9 +30,11 @@ const tooltip = d3.select("#mapContainer")
   .style("position", "absolute")
 
 
+
+
 // Map and projection
 const projection = d3.geoMercator()
-    .center([5,20])                // GPS of location to zoom on
+    .center([5,40])                // GPS of location to zoom on
     .scale(165)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
@@ -71,16 +79,17 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
     const mouseover = function(event, d) {
       tooltip.style("opacity", 1)
         .style("border-width", "2px")
-        .html(d.Country + "<br>" + "Plastic Waste Generated: " + new Intl.NumberFormat().format(d.PlasticWasteGeneration) + " kg/day<br>")
+        .html(d.Country + "" + "Plastic Waste Generated: " + new Intl.NumberFormat().format(d.PlasticWasteGeneration) + " kg/day<br>Total Waste Generated: " + new Intl.NumberFormat().format(d.WasteGeneration)+" kg/day")
         .style("left", (event.x) + "px")
         .style("top", (event.y) + "px")
       /*.style("background-color", "rgba(2, 76, 126, 0.8)")*/
     }
     var mousemove = function(event, d) {
       tooltip
-        .html(d.Country + "<br>" + "Plastic Waste Generated: " + new Intl.NumberFormat().format(d.PlasticWasteGeneration) + " kg/day<br>")
+      .html(d.Country + "<br>" + "Plastic Waste Generated: " + new Intl.NumberFormat().format(d.PlasticWasteGeneration) + " kg/day<br>Total Waste Generated: " + new Intl.NumberFormat().format(d.WasteGeneration)+" kg/day")
         .style("left", (event.x)/2 +200 + "px")
         .style("top", (event.y)/2 +60 + "px")
+        .style("font-size", "18 px")
         /*.style("border", "solid")
         .style("border-width", "2px")
         .style("background-color", "rgba(2, 76, 126, 0.8)")*/
@@ -107,15 +116,22 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave)
 
-  // Add title and explanation
-  /*svg
-    .append("text")
-      .attr("text-anchor", "end")
-      .style("fill", "black")
-      .attr("x", width - 10)
-      .attr("y", height - 30)
-      .attr("width", 90)
-      .html("")
-      .style("font-size", 14)*/
+  
 })
+let zoom = d3.zoom()
+	.on('zoom', handleZoom);
+
+function handleZoom(e) {
+	d3.select('svg g')
+		.attr('transform', e.transform);
+  d3.selectAll('circle')
+  .attr('transform', e.transform);
+}
+
+function initZoom() {
+	d3.select('svg')
+		.call(zoom);
+}
+initZoom();
+
 

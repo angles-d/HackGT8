@@ -109,7 +109,7 @@ li:not(:last-child){
     /*background-color: rgb(3,92,150);*/
     color: rgb(230,230,230);
     background-image: url("https://raw.githubusercontent.com/angles-d/HackGT8/main/bottles1.png");
-    min-height: 800px;
+    min-height: 850px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -121,7 +121,7 @@ li:not(:last-child){
 #mapBox {
     display: flex;    
     width:90%;
-    height:100px;
+    height:850px;
 }
 #mapBox div{
     flex-basis: 100%;
@@ -133,8 +133,9 @@ li:not(:last-child){
     font-size: 40px;
     padding-left:3%;
     padding-right:3%;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 21%;
+    padding-bottom: 21%;
+    min-height: 850px;
     margin: auto;
     text-align: left;
     background-color:rgba(0, 0, 0, 0.4);
@@ -143,12 +144,14 @@ li:not(:last-child){
 }
 
 .map {
+    /* overscroll-behavior: contain; */
     text-align: center;
     margin: auto;
-    min-width:1020px;
+    min-width:1010px;
     min-height:100%;
-    padding-top: 6%;
-    padding-left: 1%;
+    overflow-y: auto;
+    /* padding-top: 6%; */
+
     background-color:rgba(0, 128, 167, 0.4);
    
 }
@@ -178,13 +181,13 @@ nav a {
 }
 
 nav a:hover {
-    color: #0095ff;
+    color: #87CEEB;
 }
 
 nav .dot {
     width: 6px;
     height: 6px;
-    background: #0084e2;
+    background: #87CEEB;
     border-radius: 50%;
     opacity: 0;
     -webkit-transform: translate(-500px, 15px);
