@@ -7,6 +7,8 @@
         <script src="https://d3js.org/d3.v6.js"></script>
         <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
         <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
         <script src = "app.js"></script>
         <link rel="stylesheet" type="text/css" href="app.css" />
         
@@ -40,14 +42,16 @@
             </div>
         </div>
         <div id = "map" class="mapDiv">
-            <div class = "mapH1">
-                <h1>Global Plastic Generation</h1>
+            <div id = "mapBox">
+                <div class = "mapH1">
+                    <h1>GLOBAL<br>PLASTIC<br>WASTE </h1>
+                </div>
+                <div class="map" id="mapContainer">
+                    <div id="my_dataviz"></div>
+                    <script src = "map.js"></script>
+                </div>
             </div>
-            <div class="map" id="mapContainer">
-                <div id="my_dataviz"></div>
-                <script src = "map.js"></script>
-            </div>
-        <div>
+        </div>
         <div class="solutionImage">
             <div class="solutionText">
                 <div class="solutionH1">
