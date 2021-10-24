@@ -10,8 +10,8 @@ var svg = d3.select("#my_dataviz")
 
 // Map and projection
 const projection = d3.geoMercator()
-    .center([0,0])                // GPS of location to zoom on
-    .scale(200)                       // This is like the zoom
+    .center([0,35])                // GPS of location to zoom on
+    .scale(140)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
 Promise.all([
@@ -42,7 +42,7 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
         .attr("d", d3.geoPath()
             .projection(projection)
         )
-      .style("stroke", "black")
+      .style("stroke", "rgba(1, 59, 97, 0.8)")
       .style("stroke-width", 2)
       .style("stroke-opacity", 0.5)
       .style("opacity", .8)
@@ -53,7 +53,7 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
       .attr("class", "tooltip")
       .attr("id", "circle")
       .style("opacity", 1)
-      .style("background-color", "white")
+      .style("background-color", "rgba(2, 76, 126, 0.8)")
       .style("border", "none")
       .style("border-width", "0px")
       .style("border-radius", "5px")
@@ -64,6 +64,7 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
     const mouseover = function(event, d) {
       Tooltip.style("opacity", 1)
       .style("border-width", "2px")
+      .style("background-color", "rgba(2, 76, 126, 0.8)")
     }
     var mousemove = function(event, d) {
       Tooltip
@@ -72,10 +73,12 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
         .style("top", (event.y)/2 - 30 + "px")
         .style("border", "solid")
         .style("border-width", "2px")
+        .style("background-color", "rgba(2, 76, 126, 0.8)")
     }
     var mouseleave = function(event, d) {
       Tooltip.style("opacity", 0)
       .style("border", "none")
+      .style("background-color", "rgba(2, 76, 126, 0.8)")
     }
 
   // Add circles:
