@@ -1,5 +1,5 @@
 var width = 1000;
-var height = 600;
+var height = 660;
 
 // The svg
 var svg = d3.select("#my_dataviz")
@@ -26,8 +26,8 @@ const Tooltip = d3.select("#mapContainer")
 
 // Map and projection
 const projection = d3.geoMercator()
-    .center([0,35])                // GPS of location to zoom on
-    .scale(140)                       // This is like the zoom
+    .center([0,37])                // GPS of location to zoom on
+    .scale(150)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
 Promise.all([
