@@ -6,6 +6,22 @@ var svg = d3.select("#my_dataviz")
   .append("svg")
   .attr("width", width)
   .attr("height", height)
+  
+// create a tooltip
+const Tooltip = d3.select("#mapContainer")
+  .append("div")
+  .attr("class", "Tooltip")
+  .attr("id", "tooltip")
+  .attr("width", "200px")
+  .attr("height", "250px")
+  .attr("display", "flex")
+  .style("border", "none")
+  .style("border-width", "0px")
+  .style("border-radius", "5px")
+  .style("padding", "25px")
+  .style("background-color", "rgba(2, 76, 126, 0.8)")
+  .style("opacity", 1)
+  .style("position", "absolute")
 
 
 // Map and projection
@@ -34,6 +50,7 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
     .range([1, 50])  // Size in pixel
     
 
+    
   // Draw the map
   svg.append("g")
       .selectAll("path")
@@ -48,38 +65,30 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
       .style("stroke-opacity", 0.5)
       .style("opacity", 0.8)
       
-    // create a tooltip
-    const Tooltip = d3.select("#my_dataviz")
-      .append("div")
-      .attr("class", "tooltip")
-      .attr("id", "circle")
-      .style("opacity", 1)
-      .style("background-color", "rgba(2, 76, 126, 0.8)")
-      .style("border", "none")
-      .style("border-width", "0px")
-      .style("border-radius", "5px")
-      .style("padding", "5px")
-      .style("opacity", 0)
+
 
     // Three function that change the tooltip when user hover / move / leave a cell
     const mouseover = function(event, d) {
       Tooltip.style("opacity", 1)
-      .style("border-width", "2px")
-      .style("background-color", "rgba(2, 76, 126, 0.8)")
+        .style("border-width", "2px")
+        .html(d.Country + "<br>" + "Plastic Waste Generated: " + new Intl.NumberFormat().format(d.PlasticWasteGeneration) + " kg/day<br>")
+        .style("left", (event.x) + "px")
+        .style("top", (event.y) + "px")
+      /*.style("background-color", "rgba(2, 76, 126, 0.8)")*/
     }
     var mousemove = function(event, d) {
       Tooltip
-        .html(d.Country + "<br>" + "Plastic Waste Generated: " + new Intl.NumberFormat().format(d.PlasticWasteGeneration) + " kg/day<br>" + "latitude: " + d.Latitude)
+        .html(d.Country + "<br>" + "Plastic Waste Generated: " + new Intl.NumberFormat().format(d.PlasticWasteGeneration) + " kg/day<br>")
         .style("left", (event.x)/2 + "px")
         .style("top", (event.y)/2 - 30 + "px")
-        .style("border", "solid")
+        /*.style("border", "solid")
         .style("border-width", "2px")
-        .style("background-color", "rgba(2, 76, 126, 0.8)")
+        .style("background-color", "rgba(2, 76, 126, 0.8)")*/
     }
     var mouseleave = function(event, d) {
       Tooltip.style("opacity", 0)
       .style("border", "none")
-      .style("background-color", "rgba(2, 76, 126, 0.8)")
+      /*.style("background-color", "rgba(2, 76, 126, 0.8)")*/
     }
 
   // Add circles:
