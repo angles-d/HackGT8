@@ -118,7 +118,4 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
       .html("")
       .style("font-size", 14)*/
 })
-$( document ).tooltip({
-  track: true
-});
-  
+

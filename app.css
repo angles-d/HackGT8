@@ -70,7 +70,7 @@
 
 .solutionImage {
     background-image: url("https://raw.githubusercontent.com/angles-d/HackGT8/main/happyrecycle.jpg");
-    min-height: 720px;
+    min-height: 800px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -82,7 +82,7 @@
     padding-top: 150px;
     font-family: Adamina;
     position: absolute;
-    top: 45%;
+    top: 40%;
     left: 50%;
     font-size: 30px;
     transform: translate(-50%, -50%);
@@ -98,9 +98,12 @@
 
 .solutionPara {
     background-color:rgba(0,0,80,.8);
-    padding: 60px;
+    padding: 30px;
 }
 
+li:not(:last-child){
+    margin-bottom: 20px;
+}
 
 .mapDiv {
     /*background-color: rgb(3,92,150);*/
@@ -232,3 +235,4 @@ nav h2 {
     /* color:#00b7ff; */
     margin-right: 50px;
 }
+
