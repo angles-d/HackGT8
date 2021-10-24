@@ -1,4 +1,4 @@
-var width = 1200;
+var width = 1000;
 var height = 600;
 
 // The svg
@@ -39,14 +39,14 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
       .selectAll("path")
       .data(dataGeo.features)
       .join("path")
-        .attr("fill", "#999999")
+        .attr("fill", "#87CEEB")
         .attr("d", d3.geoPath()
             .projection(projection)
         )
       .style("stroke", "rgba(1, 59, 97, 0.8)")
       .style("stroke-width", 2)
       .style("stroke-opacity", 0.5)
-      .style("opacity", 0.8)
+      .style("opacity", 0.75)
       
     // create a tooltip
     const Tooltip = d3.select("#my_dataviz")
