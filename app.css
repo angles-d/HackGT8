@@ -38,7 +38,7 @@
 
 .turtleImage {
     background-image: url("https://raw.githubusercontent.com/angles-d/HackGT8/main/turtleplastic.jpg");
-    min-height: 1000px;
+    min-height: 1400px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -49,7 +49,7 @@
 .problemText {
     font-family: Adamina;
     position: absolute;
-	top: 45%;
+	top: 40%;
 	left: 50%;
 	font-size: 30px;
 	transform: translate(-50%, -50%);
@@ -66,6 +66,18 @@
 .problemPara {
     background-color: rgba(3,92,150,.8);
     padding: 40px;
+}
+
+.howPara {
+    background-color: rgba(3,92,150,.8);
+    padding: 40px;
+    margin-top: 40px;
+}
+.howPara2{
+    background-color: rgba(3,92,150,.8);
+   text-align: center;
+    padding: 40px;
+    margin-top: 40px;
 }
 
 .solutionImage {
@@ -133,14 +145,26 @@ li:not(:last-child){
     font-size: 40px;
     padding-left:3%;
     padding-right:3%;
-    padding-top: 21%;
-    padding-bottom: 21%;
+    padding-top: 15%;
+    padding-bottom: 10%;
     min-height: 850px;
     margin: auto;
     text-align: left;
     background-color:rgba(0, 0, 0, 0.4);
    
     /* background-color: rgba(2, 76, 126, 0.8); */
+}
+.info{
+    font-size: 30px;
+    text-shadow: 3px 3px 20px #221e2c;
+    font-family: Adamina;
+    padding-top: 12%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.info p{
+    padding-bottom: 20px;
 }
 
 .map {
