@@ -42,7 +42,9 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
         .attr("d", d3.geoPath()
             .projection(projection)
         )
-      .style("stroke", "none")
+      .style("stroke", "black")
+      .style("stroke-width", 2)
+      .style("stroke-opacity", 0.5)
       .style("opacity", .8)
       
     // create a tooltip
