@@ -18,12 +18,13 @@
     font-family: Adamina;
     position: absolute;
 	top: 45%;
-	left: 50%;
+	left: 40%;
 	font-size: 30px;
 	transform: translate(-80%, -50%);
 	color: white;
     width: 30%;
 }
+
 .logo{
     padding:30px
 }
@@ -99,6 +100,7 @@
     padding: 60px;
 }
 
+
 .mapDiv {
     /*background-color: rgb(3,92,150);*/
     color: rgb(230,230,230);
@@ -111,19 +113,21 @@
     background-attachment: fixed;
 }
 
+
+
 .mapH1 {
     text-shadow: 2px 2px 10px #726496;
     font-size: 30px;
     padding-top: 60px;
     padding-bottom: 10px;
     text-align: center;
-    background-color: rgba(2, 76, 126, 0.8);
+    /* background-color: rgba(2, 76, 126, 0.8); */
 }
 
 .map {
     text-align: center;
     margin: auto;
-    background-color: rgba(2, 76, 126, 0.8);
+    /* background-color: rgba(2, 76, 126, 0.8); */
     /*width: 60%*/
 }
 
