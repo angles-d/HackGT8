@@ -32,20 +32,21 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
   const size = d3.scaleSqrt()
     .domain(valueExtent)  // What's in the data
     .range([1, 50])  // Size in pixel
+    
 
   // Draw the map
   svg.append("g")
       .selectAll("path")
       .data(dataGeo.features)
       .join("path")
-        .attr("fill", "#888888")
+        .attr("fill", "#999999")
         .attr("d", d3.geoPath()
             .projection(projection)
         )
       .style("stroke", "rgba(1, 59, 97, 0.8)")
       .style("stroke-width", 2)
       .style("stroke-opacity", 0.5)
-      .style("opacity", .8)
+      .style("opacity", 0.8)
       
     // create a tooltip
     const Tooltip = d3.select("#my_dataviz")
@@ -92,7 +93,7 @@ d3.csv("https://angles-d.github.io/HackGT8/waste.csv")
       .style("fill", d => color(d.Country))
       .attr("stroke", d => {if (d.n>2000) {return "black"} else {return "none"}  })
       .attr("stroke-width", 1)
-      .attr("fill-opacity", .6)
+      .attr("fill-opacity", .8)
   .on("mouseover", mouseover)
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave)
